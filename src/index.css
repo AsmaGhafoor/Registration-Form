@@ -42,59 +42,16 @@ body {
   line-height: 1;
 }
 
-/* ------------------- */
-.form-background {
-  position: relative;
-  /* Create a reference point for the pseudo-element */
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  /* Ensure no content spills outside */
-
-  background-color: rgba(255, 255, 255, 0.1);
-  /* Slight transparent white background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Shadow */
+.form-logo {
+  width: 100%;
+  background-image: url("../src/assets/logo.png"); /* Set your logo image */
+  background-size: contain; /* Make sure the image fits well */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  padding: 2rem; /* Add some padding for spacing */
+  text-align: center; 
 }
 
-.form-background::before {
-  content: "";
-  /* Create the pseudo-element */
-  position: absolute;
-  /* Position it absolutely within the container */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../src/assets/logo.png");
-  /* Set the background image */
-  background-size: cover;
-  background-position: center;
-  filter: blur(8px);
-  /* Apply the blur effect to the background image */
-  z-index: -1;
-  /* Place the pseudo-element behind the content */
-
-  /* Light overlay effect */
-  background-color: rgba(255, 255, 255, 0.4);
-  /* White with 40% opacity for lightening effect */
-}
-
-/* Optional: Add styles to ensure form content remains clear */
-.form-content {
-  position: relative;
-  z-index: 1;
-  /* Ensure form content appears above the blurred image */
-  padding: 20px;
-  /* Adjust padding as needed */
-  background-color: rgba(255, 255, 255, 0.85);
-  /* Semi-transparent white for clear visibility */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Optional: Add shadow for better visibility */
-}
-
-/* --------------- */
 
 /* Background container */
 .background-container {

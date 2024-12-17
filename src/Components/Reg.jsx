@@ -96,18 +96,13 @@ const Reg = () => {
 
     return (
 
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center min-h-screen bg-gray-200">
             <form
                 onSubmit={handleSubmit}
-                className="form-background backdrop-blur-sm mt-4 p-8 rounded-2xl shadow-xl w-full max-w-5xl bg-white"
-                // style={{
-                //     background: "linear-gradient(135deg, #E0F7FA, #B2DFDB, #E8F5E9)", // Light pastel gradient
-                //     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1)", // Soft shadow
-                //     backdropFilter: "blur(4px)", // Light blur for glass-like softness
-                // }}
-                >
-
-                <h2 className="text-4xl font-bold text-green-500 decoration-double text-center mb-6"> NEW EMPLOYEE DATABASE REGISTRATION FORM</h2>
+                className="backdrop-blur-sm mt-4 p-8 rounded-2xl shadow-xl w-full max-w-5xl bg-white"
+            >
+                <div className="form-logo size-32"></div>
+                <h2 className="text-4xl font-bold text-green-500 text-center mb-6"> NEW EMPLOYEE DATABASE REGISTRATION FORM</h2>
 
                 <div className="flex justify-normal items-center">
 
