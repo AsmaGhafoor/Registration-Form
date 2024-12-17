@@ -5,11 +5,9 @@ const ImageUpload = () => {
   const [error, setError] = useState(null);
   const fileInputRef = useRef(null);
 
-
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Create an image element to check dimensions
       const img = new Image();
       img.src = URL.createObjectURL(file);
 
@@ -17,18 +15,11 @@ const ImageUpload = () => {
         const width = img.width;
         const height = img.height;
 
-        // Check if the image dimensions are between 132px and 170px
-        // if (width >= 132 && width <= 170 && height >= 132 && height <= 170) {
         setImage(img.src);
-        setError(null);  // Clear any previous error
-        // } else {
-        //   setError('Image dimensions must be between 35mm (132px) and 45mm (170px) in width and height.');
-        //   setImage(null);  // Reset image if validation fails
-        // }
+        setError(null);
       };
     }
   };
-
 
   const triggerFileInput = () => fileInputRef.current.click();
 
@@ -36,7 +27,7 @@ const ImageUpload = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md w-100">
+      <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md w-full sm:w-96 md:w-[400px] lg:w-[450px]">
         <input
           type="file"
           accept="image/*"
@@ -46,7 +37,7 @@ const ImageUpload = () => {
         />
 
         {image ? (
-          <div className="relative w-40 h-40 border-4 border-gray-500 rounded-md overflow-hidden">
+          <div className="relative w-full h-[150px] sm:h-[160px] md:h-[170px] lg:h-[180px] border-4 border-gray-500 rounded-md overflow-hidden">
             <img
               src={image}
               alt="Uploaded"
@@ -75,7 +66,7 @@ const ImageUpload = () => {
           </div>
         ) : (
           <button
-            className="w-40 h-40 border-2 border-gray-500 p-1 rounded flex flex-col justify-center items-center"
+            className="w-full sm:w-40 h-full sm:h-40 border-2 border-gray-500 p-1 rounded flex flex-col justify-center items-center"
             type="button"
             onClick={triggerFileInput}
           >
