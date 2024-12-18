@@ -27,7 +27,7 @@ const ImageUpload = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md w-full sm:w-96 md:w-[400px] lg:w-[450px]">
+      <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md w-[250px] sm:w-[270px] md:w-[210px]">
         <input
           type="file"
           accept="image/*"
@@ -38,11 +38,8 @@ const ImageUpload = () => {
 
         {image ? (
           <div className="relative w-full h-[150px] sm:h-[160px] md:h-[170px] lg:h-[180px] border-4 border-gray-500 rounded-md overflow-hidden">
-            <img
-              src={image}
-              alt="Uploaded"
-              className="w-full h-full object-cover rounded-md"
-            />
+
+            <img src={image} alt="Uploaded" className="w-full h-full object-cover rounded-md" />
             <button
               onClick={handleDeleteImage}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 p-2 rounded-full shadow-md hover:bg-red-700"
@@ -63,6 +60,7 @@ const ImageUpload = () => {
                 />
               </svg>
             </button>
+
           </div>
         ) : (
           <button

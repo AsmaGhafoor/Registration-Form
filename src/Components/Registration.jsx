@@ -10,26 +10,35 @@ const Reg = () => {
     const [formData, setFormData] = useState({
         fullName: "",
         fatherName: "",
-        profile_image: "",
         familyName: "",
-        gender: "",
         cnic: "",
+        profile_image: "",
+
+        gender: "",
         dob: "",
-        subject: "",
-        designation: "",
         email: "",
-        mobile: "",
-        homeContact: "",
-        emergencyNumber: "",
+
+        designation: "",
+        subject: "",
+        meritNo: "",
+
         maritalStatus: "",
         religion: "",
         languages: "",
-        disability: "",
-        domicileDistrict: "",
+
         domicileType: "",
-        qualification: "",
-        passingYear: "",
-        universityInstitute: "",
+        domicileDistrict: "",
+        disability: "",
+
+        mobile: "",
+        homeContact: "",
+        emergencyNumber: "",
+
+
+        // qualification: "",
+        // passingYear: "",
+        // universityInstitute: "",
+
         residentialAddress: {
             region: "",
             district: "",
@@ -99,100 +108,114 @@ const Reg = () => {
         <div className="flex justify-center items-center min-h-screen bg-gray-200">
             <form
                 onSubmit={handleSubmit}
-                className="backdrop-blur-sm mt-4 p-8 rounded-2xl shadow-xl w-full max-w-5xl bg-white"
+                className="mt-4 p-8 rounded-2xl shadow-xl w-full max-w-5xl bg-white"
             >
                 <div className="form-logo size-32"></div>
-                <h2 className="text-4xl font-bold text-green-500 text-center mb-6"> NEW EMPLOYEE DATABASE REGISTRATION FORM</h2>
+                <h2 className="text-4xl font-bold text-green-700 text-center mb-6"> NEW EMPLOYEE DATABASE REGISTRATION FORM</h2>
 
-                <div className="flex justify-normal items-center">
+                <div className="flex justify-normal items-center ">
 
-                    <div className="grid grid-cols-2 w-2/3 gap-4 mr-4">
-                        {/* Full Name & Father Name */}
-                        <div className="mb-4">
-                            <label className="block font-medium mb-2" htmlFor="fullName">
-                                FULL NAME:
-                            </label>
-                            <input
-                                type="text"
-                                id="fullName"
-                                name="fullName"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border rounded-lg"
-                                required
-                            />
+                    <div className="grid grid-cols-2 w-full gap-4">
+                        {/* Left Side: Full Name, Father Name, Family Name */}
+                        <div className="grid grid-cols-1 gap-4 w-[40rem]">
+                            {/* Full Name */}
+                            <div className="mb-4">
+                                <label className="block font-medium mb-2" htmlFor="fullName">
+                                    FULL NAME:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border rounded-lg"
+                                    required
+                                />
+                            </div>
+
+                            {/* Father Name */}
+                            <div className="mb-4">
+                                <label className="block font-medium mb-2" htmlFor="fatherName">
+                                    FATHER NAME:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="fatherName"
+                                    name="fatherName"
+                                    value={formData.fatherName}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border rounded-lg"
+                                    required
+                                />
+                            </div>
+
+                            {/* Family Name */}
+                            <div className="mb-4">
+                                <label className="block font-medium mb-2" htmlFor="familyName">
+                                    FAMILY NAME:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="familyName"
+                                    name="familyName"
+                                    value={formData.familyName}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border rounded-lg"
+                                    required
+                                />
+                            </div>
+
+                            {/* CNIC */}
+                            <div className="mb-4">
+                                <label className="block font-medium mb-2" htmlFor="cnic">
+                                    CNIC:
+                                </label>
+                                <input
+                                    type="text"
+                                    id="cnic"
+                                    name="cnic"
+                                    value={formData.cnic}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border rounded-lg"
+                                    required
+                                />
+                            </div>
+
                         </div>
 
-                        <div className="mb-4">
-                            <label className="block font-medium mb-2" htmlFor="fatherName">
-                                FATHER NAME:
-                            </label>
-                            <input
-                                type="text"
-                                id="fatherName"
-                                name="fatherName"
-                                value={formData.fatherName}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border rounded-lg"
-                                required
-                            />
-                        </div>
-                        <div className="mb-4">
-                            <label className="block font-medium mb-2" htmlFor="familyName">
-                                FAMILY NAME:
-                            </label>
-                            <input
-                                type="text"
-                                id="familyName"
-                                name="familyName"
-                                value={formData.familyName}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border rounded-lg"
-                                required
-                            />
+                        {/* Right Side: Upload Picture */}
+                        <div className="flex justify-end items-start">
+                            <div className="p-6 w-64 flex justify-end items-start mt-4">
+                                <ImageUpload />
+                            </div>
                         </div>
 
-                        <div className="mb-4">
-                            <label className="block font-medium mb-2" htmlFor="gender">
-                                GENDER:
-                            </label>
-                            <select
-                                id="gender"
-                                name="gender"
-                                value={formData.gender}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border rounded-lg"
-                                required
-                            >
-                                <option value="">SELECT GENDER</option>
-                                <option value="Male">MALE</option>
-                                <option value="Female">FEMALE</option>
-                            </select>
-                        </div>
                     </div>
-                    <div className="w-1/3 mb-4">
-                        <ImageUpload />
-                    </div>
+
 
                 </div>
 
                 <div className="grid grid-cols-3 gap-4">
-
-                    {/* CNIC & Date of Birth */}
                     <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="cnic">
-                            CNIC:
+                        <label className="block font-medium mb-2" htmlFor="gender">
+                            GENDER:
                         </label>
-                        <input
-                            type="text"
-                            id="cnic"
-                            name="cnic"
-                            value={formData.cnic}
+                        <select
+                            id="gender"
+                            name="gender"
+                            value={formData.gender}
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
-                        />
+                        >
+                            <option value="">SELECT GENDER</option>
+                            <option value="Male">MALE</option>
+                            <option value="Female">FEMALE</option>
+                        </select>
                     </div>
+
+                    {/* Date of Birth */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="dob">
                             DATE OF BIRTH:
@@ -208,7 +231,38 @@ const Reg = () => {
                         />
                     </div>
 
-                    {/* Subject & Designation */}
+                    {/* Email */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="email">
+                            EMAIL:
+                        </label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+                    {/* Designation */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="designation">
+                            DESIGNATION:
+                        </label>
+                        <input
+                            type="text"
+                            id="designation"
+                            name="designation"
+                            value="LECTURER BPS (17)"
+                            readOnly
+                            className="w-full px-4 py-2 border rounded-lg bg-gray-100 "
+                        />
+                    </div>
+
+                    {/* Subject */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="subject">
                             SUBJECT:
@@ -244,80 +298,23 @@ const Reg = () => {
                         </select>
                     </div>
 
+                    {/* Merit No */}
                     <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="designation">
-                            DESIGNATION:
-                        </label>
-                        <input
-                            type="text"
-                            id="designation"
-                            name="designation"
-                            value="LECTURER BPS (17)"
-                            readOnly
-                            className="w-full px-4 py-2 border rounded-lg bg-gray-100 "
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="email">
-                            EMAIL:
-                        </label>
-                        <input
-                            type="text"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="mobile">
-                            MOBILE:
+                        <label className="block font-medium mb-2" htmlFor="meritNo">
+                            MERIT NO:
                         </label>
                         <input
                             type="number"
-                            id="mobile"
-                            name="mobile"
-                            value={formData.mobile}
+                            id="meritNo"
+                            name="meritNo"
+                            value={formData.meritNo}
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
                         />
                     </div>
 
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="homeContact">
-                            HOME CONTACT:
-                        </label>
-                        <input
-                            type="number"
-                            id="homeContact"
-                            name="homeContact"
-                            value={formData.homeContact}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="emergencyNumber">
-                            EMERGENCY NUMBER:
-                        </label>
-                        <input
-                            type="number"
-                            id="emergencyNumber"
-                            name="emergencyNumber"
-                            value={formData.emergencyNumber}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
+                    {/* Marital Status */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="maritalStatus">
                             MARITAL STATUS:
@@ -338,6 +335,7 @@ const Reg = () => {
                         </select>
                     </div>
 
+                    {/* Religion */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="religion">
                             RELIGION:
@@ -353,6 +351,7 @@ const Reg = () => {
                         />
                     </div>
 
+                    {/* Languages */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="languages">
                             LANGUAGES:
@@ -368,36 +367,7 @@ const Reg = () => {
                         />
                     </div>
 
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="disability">
-                            DISABILITY (IF ANY):
-                        </label>
-                        <input
-                            type="text"
-                            id="disability"
-                            name="disability"
-                            value={formData.disability}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="domicileDistrict">
-                            DOMICILE DISTRICT:
-                        </label>
-                        <input
-                            type="text"
-                            id="domicileDistrict"
-                            name="domicileDistrict"
-                            value={formData.domicileDistrict}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
+                    {/* Domicile Type */}
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="domicileType">
                             DOMICILE TYPE:
@@ -413,7 +383,89 @@ const Reg = () => {
                         />
                     </div>
 
+                    {/* Domicile District */}
                     <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="domicileDistrict">
+                            DOMICILE DISTRICT:
+                        </label>
+                        <input
+                            type="text"
+                            id="domicileDistrict"
+                            name="domicileDistrict"
+                            value={formData.domicileDistrict}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+                    {/* Disability */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="disability">
+                            DISABILITY (IF ANY):
+                        </label>
+                        <input
+                            type="text"
+                            id="disability"
+                            name="disability"
+                            value={formData.disability}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+
+                    {/* Mobile */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="mobile">
+                            MOBILE:
+                        </label>
+                        <input
+                            type="number"
+                            id="mobile"
+                            name="mobile"
+                            value={formData.mobile}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+                    {/* Home Contact */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="homeContact">
+                            HOME CONTACT:
+                        </label>
+                        <input
+                            type="number"
+                            id="homeContact"
+                            name="homeContact"
+                            value={formData.homeContact}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+                    {/* Emergency Number */}
+                    <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="emergencyNumber">
+                            EMERGENCY NUMBER:
+                        </label>
+                        <input
+                            type="number"
+                            id="emergencyNumber"
+                            name="emergencyNumber"
+                            value={formData.emergencyNumber}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div>
+
+                    {/* Qualification */}
+                    {/* <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="qualification">
                             QUALIFICATION:
                         </label>
@@ -426,28 +478,10 @@ const Reg = () => {
                             className="w-full px-4 py-2 border rounded-lg"
                             required
                         />
-                    </div>
-                </div>
+                    </div> */}
 
-                <div className="grid grid-cols-3 gap-4">
-                    {/* Passing Year - 1 column */}
-                    <div className="mb-4 col-span-1">
-                        <label className="block font-medium mb-2" htmlFor="passingYear">
-                            PASSING YEAR:
-                        </label>
-                        <input
-                            type="text"
-                            id="passingYear"
-                            name="passingYear"
-                            value={formData.passingYear}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
-
-                    {/* University Institute - 2 columns */}
-                    <div className="mb-4 col-span-2">
+                    {/* University Institute */}
+                    {/* <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="universityInstitute">
                             UNIVERSITY INSTITUTE:
                         </label>
@@ -460,15 +494,34 @@ const Reg = () => {
                             className="w-full px-4 py-2 border rounded-lg"
                             required
                         />
-                    </div>
+                    </div> */}
+
+                    {/* Passing Year */}
+                    {/* <div className="mb-4">
+                        <label className="block font-medium mb-2" htmlFor="passingYear">
+                            PASSING YEAR:
+                        </label>
+                        <input
+                            type="text"
+                            id="passingYear"
+                            name="passingYear"
+                            value={formData.passingYear}
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded-lg"
+                            required
+                        />
+                    </div> */}
                 </div>
 
 
+
                 {/* Residential & Permanent Address (Region, District, Taluka, Street Address) */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="block font-medium mb-4  mt-4 text-2xl">RESIDENTIAL ADDRESS:</div>
+
+                <div className="grid grid-cols-3 gap-4">
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="residentialAddress.region">
-                            RESIDENTIAL REGION:
+                            REGION:
                         </label>
                         <select
                             type="text"
@@ -490,9 +543,9 @@ const Reg = () => {
                     </div>
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="residentialAddress.district">
-                            RESIDENTIAL DISTRICT:
+                            DISTRICT:
                         </label>
-                        <input
+                        <select
                             type="text"
                             id="residentialAddress"
                             name="residentialAddress.district"
@@ -500,13 +553,18 @@ const Reg = () => {
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
-                        />
+                        >
+                            <option value="">SELECT DISTRICT</option>
+                            <option value="karachi">ABC</option>
+                            <option value="hyderabad">DEF</option>
+                            <option value="mirpurkhas">GHI</option>
+                        </select>
                     </div>
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="residentialAddress.taluka">
-                            RESIDENTIAL TALUKA/TOWN:
+                            TALUKA/TOWN:
                         </label>
-                        <input
+                        <select
                             type="text"
                             id="residentialAddress"
                             name="residentialAddress.taluka"
@@ -514,22 +572,42 @@ const Reg = () => {
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
-                        />
+                        >
+                            <option value="">SELECT TALUKA/TOWN</option>
+                            <option value="karachi">ABC</option>
+                            <option value="hyderabad">DEF</option>
+                            <option value="mirpurkhas">GHI</option>
+                        </select>
                     </div>
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="residentialAddress.streetAddress">
-                            RESIDENTIAL STREET ADDRESS:
-                        </label>
-                        <input
-                            type="text"
-                            id="residentialAddress"
-                            name="residentialAddress.streetAddress"
-                            value={formData.residentialAddress.streetAddress}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
+                </div>
+                {/* Address */}
+                <div className="mb-4">
+                    <label className="block font-medium mb-2" htmlFor="residentialAddress.streetAddress">
+                        ADDRESS LINE 01:
+                    </label>
+                    <input
+                        type="text"
+                        id="residentialAddress"
+                        name="residentialAddress.streetAddress"
+                        value={formData.residentialAddress.streetAddress}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border rounded-lg"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block font-medium mb-2" htmlFor="residentialAddress.streetAddress">
+                        ADDRESS LINE 02 (OPTIONAL):
+                    </label>
+                    <input
+                        type="text"
+                        id="residentialAddress"
+                        name="residentialAddress.streetAddress"
+                        value={formData.residentialAddress.streetAddress}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border rounded-lg"
+                        required
+                    />
                 </div>
 
 
@@ -546,11 +624,14 @@ const Reg = () => {
                 </div>
 
 
-                <div className="grid grid-cols-2 gap-4">
-                    {/* Permanent Address (Region, District, Taluka, Street Address) */}
+
+                {/* Permanent Address (Region, District, Taluka, Street Address) */}
+                <div className="block font-medium mb-4 mt-4 text-2xl">PERMANENT ADDRESS:</div>
+
+                <div className="grid grid-cols-3 gap-4">
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="permanentAddress.region">
-                            PERMANENT REGION:
+                            REGION:
                         </label>
                         <select
                             type="text"
@@ -573,9 +654,9 @@ const Reg = () => {
 
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="permanentAddress.district">
-                            PERMANENT DISTRICT:
+                            DISTRICT:
                         </label>
-                        <input
+                        <select
                             type="text"
                             id="permanentAddress"
                             name="permanentAddress.district"
@@ -583,13 +664,18 @@ const Reg = () => {
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
-                        />
+                        >
+                            <option value="">SELECT DISTRICT</option>
+                            <option value="karachi">ABC</option>
+                            <option value="hyderabad">DEF</option>
+                            <option value="mirpurkhas">GHI</option>
+                        </select>
                     </div>
                     <div className="mb-4">
                         <label className="block font-medium mb-2" htmlFor="permanentAddress.taluka">
-                            PERMANENT TALUKA/TOWN:
+                            TALUKA/TOWN:
                         </label>
-                        <input
+                        <select
                             type="text"
                             id="permanentAddress"
                             name="permanentAddress.taluka"
@@ -597,22 +683,42 @@ const Reg = () => {
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded-lg"
                             required
-                        />
+                        >
+                            <option value="">SELECT TALUKA/TOWN</option>
+                            <option value="karachi">ABC</option>
+                            <option value="hyderabad">DEF</option>
+                            <option value="mirpurkhas">GHI</option>
+                        </select>
                     </div>
-                    <div className="mb-4">
-                        <label className="block font-medium mb-2" htmlFor="permanentAddress.streetAddress">
-                            PERMANENT STREET ADDRESS:
-                        </label>
-                        <input
-                            type="text"
-                            id="permanentAddress"
-                            name="permanentAddress.streetAddress"
-                            value={formData.permanentAddress.streetAddress}
-                            onChange={handleChange}
-                            className="w-full px-4 py-2 border rounded-lg"
-                            required
-                        />
-                    </div>
+                </div>
+                {/* Permanent Address */}
+                <div className="mb-4">
+                    <label className="block font-medium mb-2" htmlFor="permanentAddress.streetAddress">
+                        ADDRESS LINE 01:
+                    </label>
+                    <input
+                        type="text"
+                        id="permanentAddress"
+                        name="permanentAddress.streetAddress"
+                        value={formData.permanentAddress.streetAddress}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border rounded-lg"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block font-medium mb-2" htmlFor="permanentAddress.streetAddress">
+                        ADDRESS LINE 02 (OPTIONAL):
+                    </label>
+                    <input
+                        type="text"
+                        id="permanentAddress"
+                        name="permanentAddress.streetAddress"
+                        value={formData.permanentAddress.streetAddress}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border rounded-lg"
+                        required
+                    />
                 </div>
 
 
@@ -620,7 +726,7 @@ const Reg = () => {
                 {/* Submit Button */}
                 <div className="mb-4 flex justify-center">
                     <button type="submit"
-                        className="bg-green-500 text-white font-bold py-3 px-6 rounded-full hover:bg-green-600 shadow-md hover:shadow-lg transition duration-300">
+                        className="bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:bg-green-700 shadow-md hover:shadow-lg transition duration-300">
                         SUBMIT
                     </button>
 

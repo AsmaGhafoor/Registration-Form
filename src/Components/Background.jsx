@@ -6,31 +6,49 @@ import { useNavigate } from "react-router-dom";
 const Background = () => {
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate("/reg"); // Route to registration component
+    const handleRegisterClick = () => {
+        navigate("/registration"); // Route to registration component
+    };
+
+    const handleCertificateClick = () => {
+        navigate("/certificate"); // Route to certificate generation component (update as needed)
     };
 
     return (
-        <div className="background-container">
-            {/* Background Overlay */}
-            <div className="background-overlay"></div>
+        <>
+            <div className="background-container">
+                
+            </div>
 
-            {/* Animated Shapes */}
-            <div className="shape shape-blue"></div>
-            <div className="shape shape-purple"></div>
+            {/* Text Content */}
+            <div className="registration-text">
+                <h2 className="text-2xl font-bold text-center text-white p-4">
+                    Newly recruited lecturers are required to complete this
+                    mandatory database registration and submit the certificate
+                    along with offer acceptance.
+                </h2>
+            </div>
 
-            {/* Text and Button Content */}
-            <div className="content-container">
-                <h1 className="welcome-text">Welcome for Newly Appointed Lecturers</h1>
+            {/* Buttons Content */}
+            <div className="button-container">
                 <button
-                    type="submit"
-                    onClick={handleClick}
+                    type="button"
+                    onClick={handleRegisterClick}
                     className="registration-button"
                 >
                     Click here for Registration
                 </button>
+                <button
+                    type="button"
+                    onClick={handleCertificateClick}
+                    className="generate-button"
+                >
+                    Generate Certificate (Already Registered)
+                </button>
             </div>
-        </div>
+        </>
+
+
     );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Background from "./Components/Background";
-import Reg from "./Components/Reg";
+import Registration from "./Components/Registration";
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Background />} />
-          <Route path="/reg" element={<Reg />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/certificate" />
         </Routes>
       </Router>
     </main>
