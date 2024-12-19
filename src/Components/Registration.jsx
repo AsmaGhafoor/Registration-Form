@@ -34,7 +34,6 @@ const Reg = () => {
         homeContact: "",
         emergencyNumber: "",
 
-
         // qualification: "",
         // passingYear: "",
         // universityInstitute: "",
@@ -729,8 +728,8 @@ const Reg = () => {
                         className="bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:bg-green-700 shadow-md hover:shadow-lg transition duration-300">
                         SUBMIT
                     </button>
-
                 </div>
+                
             </form>
         </div>
     );

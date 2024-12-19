@@ -14,10 +14,14 @@ const Background = () => {
         navigate("/certificate"); // Route to certificate generation component (update as needed)
     };
 
+    const handleVerificationClick = () => {
+        navigate("/verificationform");
+    };
+
     return (
         <>
             <div className="background-container">
-                
+
             </div>
 
             {/* Text Content */}
@@ -31,6 +35,10 @@ const Background = () => {
 
             {/* Buttons Content */}
             <div className="button-container">
+                <button type="submit" onClick={handleVerificationClick}
+                    className="mt-2 bg-green-600 text-white font-bold py-1 px-6 rounded-full hover:bg-green-700 shadow-md hover:shadow-lg transition duration-300">
+                    Go for Registration
+                </button>
                 <button
                     type="button"
                     onClick={handleRegisterClick}

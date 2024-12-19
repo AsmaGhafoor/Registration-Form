@@ -151,3 +151,52 @@ body {
   animation: buttonSlide 1s ease-out;
 }
 
+
+
+/* ------------ Verification Form CSS ----------- */
+.verifictaion-container {
+  display: flex;
+  height: 100vh; /* Full screen height */
+  position: relative;
+}
+
+.verifictaion-container .verifictaion-image {
+  flex: 1;
+  background-image: url("../src/assets/DJCollegeKarachi.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.verifictaion-container .verifictaion-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 195, 111, 0.5); /* Green overlay */
+  z-index: 1;
+}
+
+.verifictaion-container .verifictaion-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Right side background color */
+  color: black; /* Text color */
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
